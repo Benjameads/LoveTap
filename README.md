@@ -1,5 +1,6 @@
 # LoveTap (HackUSU Entry)
 Connor Meads @Septimis
+
 Benjamin Meads @Benjameads
 ## Description
 In order to prevent hauling around a guest book obtained at your wedding for the rest of your life, we have gutted an analog phone from 1938 into a "voicemail" alternative.  Now guests can simply pick up the receiver and leave a heartfelt message for the lucky couple.  We have implemented a Respberry Pi to listen for when the receiver is lifted via a button in GPIO and begin recording the patrons message.  A red LED light is lit when recording is active for convenience using the same Raspberry Pi GPIO input.  Finally, the message is concluded when the receiver is placed back down and the message is saved locally onto the raspberry pi.
