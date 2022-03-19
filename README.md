@@ -22,3 +22,5 @@ Our `recordMessage()` function was copied from https://makersportal.com/blog/201
 
 ## Reach Goals
 We attempted to upload all audio files created to a database in order for a user to gain easier access to their audio files.  While implementing this, we were saving the audio recording as a `varbinary(MAX)`.  We realized too late that this had massive scaling problems, and we decided to delay this feature until a future date.
+
+<img title="guestbookInstruction" alt="Alt text" src="/documentation/AudioGuestbook.jpg">
