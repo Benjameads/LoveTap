@@ -1,10 +1,11 @@
-from blinker import receiver_connected
 import pyaudio
 import wave
 import time
 from gpiozero import Button
+from gpiozero import LED
 
 receiverBtn = Button(2)
+recordingLED = LED(17)
 #makeFile() code found at https://makersportal.com/blog/2018/8/23/recording-audio-on-the-raspberry-pi-with-python-and-a-usb-microphone
 def recordMessage():
     audio = pyaudio.PyAudio()
@@ -24,6 +25,7 @@ def recordMessage():
     stream = audio.open(format = form_1, rate = samp_rate, channels = chans, input_device_index = dev_index, input = True, frames_per_buffer = chunk)
 
     print('Starting the recording...')
+    recordingLED.on()
     frames = []
 
     #loop through and stream and append audio chunks to frames array 1 second at a time
@@ -34,7 +36,8 @@ def recordMessage():
         if receiverBtn.is_pressed:
             break
     
-    print('Recording finsihed...')
+    print('Recording finished...')
+    recordingLED.off()
 
     #close the stream
     stream.stop_stream()
